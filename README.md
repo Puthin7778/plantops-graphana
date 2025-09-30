@@ -1,4 +1,5 @@
 # Grafana MCP server
+[![smithery badge](https://smithery.ai/badge/@Puthin7778/plantops-graphana)](https://smithery.ai/server/@Puthin7778/plantops-graphana)
 
 A [Model Context Protocol][mcp] (MCP) server for Grafana.
 
@@ -251,6 +252,14 @@ This MCP server works with both local Grafana instances and Grafana Cloud. For G
    > **Note:** The environment variable `GRAFANA_API_KEY` is deprecated and will be removed in a future version. Please migrate to using `GRAFANA_SERVICE_ACCOUNT_TOKEN` instead. The old variable name will continue to work for backward compatibility but will show deprecation warnings.
 
 2. You have several options to install `mcp-grafana`:
+
+### Installing via Smithery
+
+To install plantops-graphana automatically via [Smithery](https://smithery.ai/server/@Puthin7778/plantops-graphana):
+
+```bash
+npx -y @smithery/cli install @Puthin7778/plantops-graphana
+```
 
    - **Docker image**: Use the pre-built Docker image from Docker Hub.
 
