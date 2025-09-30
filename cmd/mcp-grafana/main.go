@@ -16,8 +16,8 @@ import (
 
 	"github.com/mark3labs/mcp-go/server"
 
-	mcpgrafana "github.com/grafana/mcp-grafana"
-	"github.com/grafana/mcp-grafana/tools"
+	mcpgrafana "github.com/yourusername/mcp-grafana"
+	"github.com/yourusername/mcp-grafana/tools"
 )
 
 func maybeAddTools(s *server.MCPServer, tf func(*server.MCPServer), enabledTools []string, disable bool, category string) {

@@ -1,5 +1,5 @@
 # Build stage
-FROM golang:1.24-bullseye AS builder
+FROM golang:1.23-bullseye AS builder
 
 # Set the working directory
 WORKDIR /app
@@ -14,7 +14,7 @@ RUN go mod download
 COPY . .
 
 # Build the application
-RUN go build -o mcp-grafana ./cmd/mcp-grafana
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o mcp-grafana ./cmd/mcp-grafana
 
 # Final stage
 FROM debian:bullseye-slim

@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"os"
 
-	mcpgrafana "github.com/grafana/mcp-grafana"
-	"github.com/grafana/mcp-grafana/tools"
+	mcpgrafana "github.com/yourusername/mcp-grafana"
+	"github.com/yourusername/mcp-grafana/tools"
 	"github.com/mark3labs/mcp-go/server"
 )
 

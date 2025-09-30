@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	mcpgrafana "github.com/grafana/mcp-grafana"
+	mcpgrafana "github.com/yourusername/mcp-grafana"
 )
 
 // createCloudTestContext creates a context with a Grafana URL, Grafana service account token and

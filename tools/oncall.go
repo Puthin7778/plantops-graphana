@@ -9,7 +9,7 @@ import (
 	"strings"
 
 	aapi "github.com/grafana/amixr-api-go-client"
-	mcpgrafana "github.com/grafana/mcp-grafana"
+	mcpgrafana "github.com/yourusername/mcp-grafana"
 	"github.com/mark3labs/mcp-go/mcp"
 	"github.com/mark3labs/mcp-go/server"
 )
