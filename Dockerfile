@@ -22,4 +22,4 @@ COPY --from=builder /app/mcp-grafana .
 
 EXPOSE 8000
 
-CMD ["./mcp-grafana", "--transport", "sse", "--address", "0.0.0.0:8000"]
+CMD ["./mcp-grafana", "--transport", "streamable-http", "--address", "0.0.0.0:8000"]
