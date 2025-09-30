@@ -1,1 +1,6 @@
-runtime: "go"
+runtime: go
+build:
+  command: "go build -o mcp-grafana ./cmd/mcp-grafana"
+run:
+  command: "./mcp-grafana --transport streamable-http --address 0.0.0.0:8080"
+port: 8080
