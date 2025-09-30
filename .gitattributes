@@ -1,0 +1,45 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Go files
+*.go text eol=lf
+
+# Configuration files
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.toml text eol=lf
+
+# Shell scripts
+*.sh text eol=lf
+
+# Markdown files
+*.md text eol=lf
+
+# Dockerfile
+Dockerfile text eol=lf
+
+# Makefile
+Makefile text eol=lf
+
+# Executables
+*.exe binary
+mcp-grafana binary
+
+# Archives
+*.zip binary
+*.tar.gz binary
+*.tar.bz2 binary
+
+# Images
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg text
+
+# Certificates
+*.crt binary
+*.key binary
+*.pem binary
