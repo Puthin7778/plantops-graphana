@@ -12,7 +12,7 @@ import (
 
 	"github.com/prometheus/prometheus/model/labels"
 
-	mcpgrafana "github.com/yourusername/mcp-grafana"
+	mcpgrafana "github.com/Puthin7778/plantops-graphana"
 )
 
 const (

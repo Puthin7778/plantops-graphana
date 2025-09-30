@@ -9,7 +9,7 @@ import (
 
 	"github.com/grafana/grafana-openapi-client-go/client/search"
 	"github.com/grafana/grafana-openapi-client-go/models"
-	mcpgrafana "github.com/yourusername/mcp-grafana"
+	mcpgrafana "github.com/Puthin7778/plantops-graphana"
 )
 
 var dashboardTypeStr = "dash-db"

@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	"github.com/grafana/incident-go"
-	mcpgrafana "github.com/yourusername/mcp-grafana"
+	mcpgrafana "github.com/Puthin7778/plantops-graphana"
 	"github.com/mark3labs/mcp-go/mcp"
 	"github.com/mark3labs/mcp-go/server"
 )

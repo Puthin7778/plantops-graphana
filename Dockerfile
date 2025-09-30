@@ -1,41 +1,25 @@
 # Build stage
-FROM golang:1.23-bullseye AS builder
+FROM golang:1.23-alpine AS builder
 
-# Set the working directory
 WORKDIR /app
 
-# Copy go.mod and go.sum files
+# Copy go files
 COPY go.mod go.sum ./
-
-# Download dependencies
 RUN go mod download
 
-# Copy the source code
 COPY . .
 
-# Build the application
-RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o mcp-grafana ./cmd/mcp-grafana
+# Build with static linking
+RUN CGO_ENABLED=0 GOOS=linux go build -ldflags '-s -w' -o mcp-grafana ./cmd/mcp-grafana
 
-# Final stage
-FROM debian:bullseye-slim
+# Final stage - minimal image
+FROM alpine:latest
 
-# Install ca-certificates for HTTPS requests
-RUN apt-get update && apt-get install -y ca-certificates && rm -rf /var/lib/apt/lists/*
-
-# Create a non-root user
-RUN useradd -r -u 1000 -m mcp-grafana
-
-# Set the working directory
+RUN apk --no-cache add ca-certificates
 WORKDIR /app
 
-# Copy the binary from the builder stage
-COPY --from=builder --chown=1000:1000 /app/mcp-grafana /app/
+COPY --from=builder /app/mcp-grafana .
 
-# Use the non-root user
-USER mcp-grafana
-
-# Expose the port the app runs on
 EXPOSE 8000
 
-# Run the application
-ENTRYPOINT ["/app/mcp-grafana", "--transport", "sse", "--address", "0.0.0.0:8000"]
+CMD ["./mcp-grafana", "--transport", "sse", "--address", "0.0.0.0:8000"]

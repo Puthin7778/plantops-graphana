@@ -1,7 +1,0 @@
-version: "2"
-run:
-  concurrency: 16
-  timeout: 10m
-  go: "1.24"
-  relative-path-mode: gomod
-  allow-parallel-runners: true

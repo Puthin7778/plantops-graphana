@@ -1,5 +1,0 @@
-groups:
-  - name: seed
-    rules:
-    - record: test
-      expr: vector(1)
