@@ -1,4 +1,4 @@
-# Build stage
+
 FROM golang:alpine AS builder
 
 WORKDIR /app
@@ -9,10 +9,10 @@ RUN go mod download
 
 COPY . .
 
-# Build with static linking
+
 RUN CGO_ENABLED=0 GOOS=linux go build -ldflags '-s -w' -o mcp-grafana ./cmd/mcp-grafana
 
-# Final stage - minimal image
+
 FROM alpine:latest
 
 RUN apk --no-cache add ca-certificates
@@ -22,4 +22,8 @@ COPY --from=builder /app/mcp-grafana .
 
 EXPOSE 8000
 
-CMD ["./mcp-grafana", "--transport", "streamable-http", "--address", "0.0.0.0:8000"]
+# Set environment variables for Grafana connection (will need to be configured in Smithery)
+ENV GRAFANA_URL=""
+ENV GRAFANA_SERVICE_ACCOUNT_TOKEN=""
+
+CMD ["./mcp-grafana", "--transport", "streamable-http", "--address", "0.0.0.0:8000", "--endpoint-path", "/", "--log-level", "debug"]
