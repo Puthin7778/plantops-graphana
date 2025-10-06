@@ -1,4 +1,5 @@
 # Grafana MCP server
+[![smithery badge](https://smithery.ai/badge/@Puthin7778/plantops-graphana)](https://smithery.ai/server/@Puthin7778/plantops-graphana)
 
 A [Model Context Protocol][mcp] (MCP) server for Grafana.
 
