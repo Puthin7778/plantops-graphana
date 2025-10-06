@@ -25,8 +25,10 @@ RUN chmod +x start.sh
 
 EXPOSE 8000
 
-# Add health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-  CMD wget --no-verbose --tries=1 --spider http://localhost:8000/ || exit 1
+# Add health check - try multiple endpoints
+HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
+  CMD wget --no-verbose --tries=1 --spider http://localhost:8000/ || \
+      wget --no-verbose --tries=1 --spider http://localhost:8000/sse || \
+      wget --no-verbose --tries=1 --spider http://localhost:8000/health || exit 1
 
 CMD ["./start.sh"]

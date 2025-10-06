@@ -7,4 +7,20 @@ export GRAFANA_USERNAME="puthinkrishnamamidipalli"
 export GRAFANA_PASSWORD="plantops@123"
 
 # Start the MCP server
-exec ./mcp-grafana --transport sse --address 0.0.0.0:8000 --log-level debug
+echo "Starting MCP server with credentials..."
+echo "GRAFANA_URL: $GRAFANA_URL"
+echo "Server starting on 0.0.0.0:8000"
+
+# Try different transports - start with streamable-http first
+./mcp-grafana --transport streamable-http --address 0.0.0.0:8000 --log-level debug &
+SERVER_PID=$!
+
+# Wait a bit and check if server started
+sleep 5
+if kill -0 $SERVER_PID 2>/dev/null; then
+    echo "Server started successfully with PID $SERVER_PID"
+    wait $SERVER_PID
+else
+    echo "Server failed to start with streamable-http, trying SSE..."
+    ./mcp-grafana --transport sse --address 0.0.0.0:8000 --log-level debug
+fi
