@@ -1,5 +1,7 @@
 # Grafana MCP server
 
+[![smithery badge](https://smithery.ai/badge/@Puthin7778/plantops-graphana)](https://smithery.ai/server/@Puthin7778/plantops-graphana)
+
 A [Model Context Protocol][mcp] (MCP) server for Grafana.
 
 This provides access to your Grafana instance and the surrounding ecosystem.
@@ -252,6 +254,14 @@ This MCP server works with both local Grafana instances and Grafana Cloud. For G
 
 2. You have several options to install `mcp-grafana`:
 
+  ### Installing via Smithery
+
+  To install plantops-graphana automatically via [Smithery](https://smithery.ai/server/@Puthin7778/plantops-graphana):
+
+  ```bash
+  npx -y @smithery/cli install @Puthin7778/plantops-graphana
+  ```
+
    - **Docker image**: Use the pre-built Docker image from Docker Hub.
 
      **Important**: The Docker image's entrypoint is configured to run the MCP server in SSE mode by default, but most users will want to use STDIO mode for direct integration with AI assistants like Claude Desktop:
@@ -297,7 +307,8 @@ This MCP server works with both local Grafana instances and Grafana Cloud. For G
 
    - **Download binary**: Download the latest release of `mcp-grafana` from the releases page and place it in your `$PATH`.
 
-   - **Build from source**: If you have a Go toolchain installed you can also build and install it from source, using the `GOBIN` environment variable
+   - **Build from source**: If you have a Go toolchain installed you can also build and install it 
+from source, using the `GOBIN` environment variable
      to specify the directory where the binary should be installed. This should also be in your `PATH`.
 
      ```bash
