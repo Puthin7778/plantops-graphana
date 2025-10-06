@@ -1,5 +1,5 @@
 # Grafana MCP server
-
+[![smithery badge](https://smithery.ai/badge/@Puthin7778/plantops-graphana)](https://smithery.ai/server/@Puthin7778/plantops-graphana)
 A [Model Context Protocol][mcp] (MCP) server for Grafana.
 
 This provides access to your Grafana instance and the surrounding ecosystem.
@@ -309,6 +309,11 @@ This MCP server works with both local Grafana instances and Grafana Cloud. For G
      ```bash
      helm repo add grafana https://grafana.github.io/helm-charts
      helm install --set grafana.apiKey=<Grafana_ApiKey> --set grafana.url=<GrafanaUrl> my-release grafana/grafana-mcp
+     ```
+
+   - **Install via Smithery for Claude Desktop users**: Install using [Smithery](https://smithery.ai/server/@Puthin7778/plantops-graphana)
+     ```bash
+     npx -y @smithery/cli install @Puthin7778/plantops-graphana
      ```
 
 3. Add the server configuration to your client configuration file. For example, for Claude Desktop:
