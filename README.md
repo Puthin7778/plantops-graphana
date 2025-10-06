@@ -1,4 +1,5 @@
 # Grafana MCP server
+[![smithery badge](https://smithery.ai/badge/@Puthin7778/plantops-graphana)](https://smithery.ai/server/@Puthin7778/plantops-graphana)
 
 A [Model Context Protocol][mcp] (MCP) server for Grafana.
 
@@ -733,3 +734,14 @@ This project is licensed under the [Apache License, Version 2.0](LICENSE).
 
 [mcp]: https://modelcontextprotocol.io/
 [service-account]: https://grafana.com/docs/grafana/latest/administration/service-accounts/#add-a-token-to-a-service-account-in-grafana
+
+
+### Installing via Smithery
+
+To install plantops-graphana automatically via [Smithery](https://smithery.ai/server/@Puthin7778/plantops-graphana):
+
+```bash
+npx -y @smithery/cli install @Puthin7778/plantops-graphana
+```
+
+### Installing Manually
